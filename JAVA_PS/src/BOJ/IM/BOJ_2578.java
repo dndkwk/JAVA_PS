@@ -1,7 +1,9 @@
+package BOJ.IM;
+
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class BOJ_2578 {
 
 	static int[][] board = new int[5][5];
 	static boolean[][] visited = new boolean[5][5];
