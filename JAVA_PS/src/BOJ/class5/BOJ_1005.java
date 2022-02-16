@@ -28,7 +28,7 @@ public class BOJ_1005 {
 			Queue<Integer> q=new LinkedList<Integer>();
 			
 			for (int i = 0; i <= N; i++) {
-				arr[i] = new ArrayList<>();
+				arr[i] = new ArrayList<Integer>();
 			}
 
 			st = new StringTokenizer(br.readLine());

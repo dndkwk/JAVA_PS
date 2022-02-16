@@ -1,7 +1,9 @@
+package BOJ.class3;
+
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class BOJ_18870 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static StringTokenizer st = null;
 	static StringBuilder sb = new StringBuilder();
