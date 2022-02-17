@@ -1,9 +1,11 @@
+package BOJ;
+
 import java.io.*;
 import java.util.*;
 
 import javax.swing.plaf.synth.SynthSplitPaneUI;
 
-public class Main {
+public class BOJ_2477 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static StringTokenizer st = null;
 	static StringBuilder sb = new StringBuilder();
