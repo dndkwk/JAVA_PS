@@ -1,60 +1,56 @@
-import java.io.*;
 import java.util.*;
-
-import javax.swing.plaf.synth.SynthSplitPaneUI;
+import java.io.*;
 
 public class Main {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static StringTokenizer st = null;
-	static StringBuilder sb = new StringBuilder();
-	// 고정
-	
 
+	static int[][] board;
+	static int[] dy = { -1, 1, 1, -1 };
+	static int[] dx = { 1, 1, -1, -1 };
+	static int W, H, t;
+	static int cnt = 0;
+	static int X = -1, Y = -1;
+	
+	
+	static void sol(int y,int x) {
+		int dir=0;
+		cnt=0;
+		while(true) {
+			if(t==cnt) {
+				X=x;Y=y;
+				break;
+			}
+			if(x+dx[dir]==W && y+dy[dir]==H) {
+				dir=
+			}else if(x+dx[dir]==W) {
+				
+			}else if(y+dy[dir]==H) {
+				
+			}
+			
+			y=y+dy[dir];
+			x=x+dx[dir];
+		}
+	}
+	
 	public static void main(String[] args) throws Exception {
+		st = new StringTokenizer(br.readLine());
+		W = Integer.parseInt(st.nextToken());
+		H = Integer.parseInt(st.nextToken());
+
+		st = new StringTokenizer(br.readLine());
+		int p = Integer.parseInt(st.nextToken());
+		int q = Integer.parseInt(st.nextToken());
 		
-		int[] arr=new int[6];
-		int N=Integer.parseInt(br.readLine());
+		t=Integer.parseInt(br.readLine());
 		
-		for(int i=0;i<6;i++) {
-			st=new StringTokenizer(br.readLine());
-			int d= Integer.parseInt(st.nextToken());
-			arr[i]=Integer.parseInt(st.nextToken());
-		}
+		sol(0,0);
+
+		board = new int[H][W];
 		
-		int w=0;
-		int h=0;
-		
-		for(int i=0;i<6;i++) {
-			if(i%2==0) {
-				if(w<arr[i]) {
-					w=arr[i];
-				}
-			}else {
-				if(h<arr[i]) {
-					h=arr[i];
-				}
-			}
-		}
-		
-		int w2=0;
-		int h2=0;
-		
-		for(int i=0;i<6;i++) {
-			if(i%2==0) {
-				if(h==arr[(i+5) % 6 ]+arr[(i+1)%6]) {
-					w2=arr[i];
-				}
-			}else {
-				if(w==arr[(i+5) % 6 ]+arr[(i+1)%6]) {
-					h2=arr[i];
-				}
-			}
-		}
-		
-		System.out.println(((w*h)-(w2*h2))*N);
-		
-		
-		return;
+		System.out.println(X+" "+Y);
+
 	}
 
 }
