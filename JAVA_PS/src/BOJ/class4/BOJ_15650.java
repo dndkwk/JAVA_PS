@@ -1,7 +1,9 @@
+package BOJ.class4;
+
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class BOJ_15650 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static StringTokenizer st = null;
 	static StringBuilder sb = new StringBuilder();
@@ -19,7 +21,7 @@ public class Main {
 		} else {
 			for (int i = idx; i < N; i++) {
 				result[cnt] = arr[i];
-				sol(cnt + 1, i );
+				sol(cnt + 1, i + 1);
 
 			}
 		}
