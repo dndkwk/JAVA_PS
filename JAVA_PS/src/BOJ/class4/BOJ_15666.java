@@ -1,7 +1,9 @@
+package BOJ.class4;
+
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class BOJ_15666 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static StringTokenizer st = null;
 	static StringBuilder sb = new StringBuilder();
@@ -9,26 +11,21 @@ public class Main {
 
 	static int N, M,L;
 	static int[] result, arr;
-	static HashSet<String> set=new HashSet<>();
 
-	public static void sol(int cnt, int flag) {
+	public static void sol(int cnt, int idx) {
 		if (cnt == M) {
-			String temp="";
 			for (int i = 0; i < M; i++) {
-				temp+=result[i] + " ";
+				System.out.print(result[i] + " ");
 			}
-			if(!set.contains(temp)) {
-				set.add(temp);
-				System.out.println(temp);
-			}
+			System.out.println("");
 		} else {
-			for (int i = 0; i < N; i++) {
-				if((flag & 1<<i)==0) {
-					result[cnt] = arr[i];
-					sol(cnt + 1, flag | 1<<i);
-				}
+			for (int i = idx; i < arr.length; i++) {
+				result[cnt] = arr[i];
+				sol(cnt + 1, i);
+
 			}
 		}
+
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -36,13 +33,18 @@ public class Main {
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
 		result = new int[M];
-		arr = new int[N];
-		
+
+		Set<Integer> set=new HashSet<>();		
 		st = new StringTokenizer(br.readLine());
 		for (int i = 0; i < N; i++) {
-			arr[i]=Integer.parseInt(st.nextToken());
+			set.add(Integer.parseInt(st.nextToken()));
 		}
-		
+		arr = new int[set.size()];
+		int idx=0;
+		for(int temp:set) {
+			arr[idx]=temp;
+			idx++;
+		}
 		Arrays.sort(arr);
 		
 		sol(0, 0);
