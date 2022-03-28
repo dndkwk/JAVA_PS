@@ -7,46 +7,29 @@ public class Main {
 	static StringBuilder sb = new StringBuilder();
 	//
 	static int N;
-	static int[] people;
-	static int[][] dp;
-	static ArrayList<ArrayList<Integer>> board;
-
-	public static void sol(int cur, int parent) {
-		for (int nxt : board.get(cur)) {
-			if(nxt!=parent) {
-				sol(nxt, cur);
-				dp[cur][1] += dp[nxt][0];
-				dp[cur][0] += Math.max(dp[nxt][0], dp[nxt][1]);
-			}
-		}
-		dp[cur][1] += people[cur];
-
-	}
 
 	public static void main(String[] args) throws Exception {
 		N = Integer.parseInt(br.readLine());
-		people = new int[N];
-		dp = new int[N][2];
-		board = new ArrayList<ArrayList<Integer>>();
-		for (int i = 0; i < N; i++) {
-			board.add(new ArrayList<Integer>());
-		}
 
 		st = new StringTokenizer(br.readLine());
+		PriorityQueue<Double> pq = new PriorityQueue<>(Collections.reverseOrder());
 		for (int i = 0; i < N; i++) {
-			people[i] = Integer.parseInt(st.nextToken());
+			pq.add(Double.parseDouble(st.nextToken()));
 		}
-
-		for (int i = 0; i < N - 1; i++) {
-			st = new StringTokenizer(br.readLine());
-			int u = Integer.parseInt(st.nextToken()) - 1;
-			int v = Integer.parseInt(st.nextToken()) - 1;
-			board.get(u).add(v);
-			board.get(v).add(u);
+		int k=Integer.parseInt(br.readLine());
+		for(int i=0;i<k;i++) {
+			Double temp=pq.poll();
+			temp/=2;
+			pq.add(temp);
+			pq.add(temp);
 		}
-
-		sol(0, -1);
-		System.out.println(Math.max(dp[0][0], dp[0][1]));
-
+		double max=pq.poll();
+		while(pq.size()!=1) {
+			pq.poll();
+		}
+		double min=pq.poll();
+		//System.out.println(min);
+		System.out.println(max-min);
+		
 	}
 }
