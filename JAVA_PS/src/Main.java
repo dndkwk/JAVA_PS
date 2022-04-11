@@ -6,28 +6,13 @@ public class Main {
 	static StringTokenizer st = null;
 	static StringBuilder sb = new StringBuilder();
 	//
-	static int N,M;
-	static char[][] board=new char[100][100];
 	
 	
 	public static void main(String[] args) throws Exception {
-		int T=stoi(br.readLine());
+		HashMap<String,ArrayList<String>> hm=new HashMap<>();
 		
-		while(T --> 0) {
-			st=new StringTokenizer(br.readLine());
-			N=stoi(st.nextToken());
-			M=stoi(st.nextToken());
-			for(int i=0;i<N;i++) {
-				String temp=br.readLine();
-				for(int j=0;j<M;j++) {
-					board[i][j]=temp.charAt(j);
-				}				
-			}
-			String key=br.readLine();
-			
-			
-			
-		}	
+		
+		
 	}
 	
 
