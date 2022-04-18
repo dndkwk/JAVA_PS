@@ -1,5 +1,4 @@
 package BOJ.class5;
-
 import java.util.*;
 import java.io.*;
 
@@ -50,3 +49,4 @@ public class BOJ_12015 {
 		return Integer.parseInt(str);
 	}
 }
+
