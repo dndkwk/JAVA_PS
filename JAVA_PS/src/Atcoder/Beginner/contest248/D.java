@@ -1,8 +1,10 @@
+package Atcoder.Beginner.contest248;
+
 
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class D {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static StringTokenizer st = null;
 	static StringBuilder sb = new StringBuilder();
