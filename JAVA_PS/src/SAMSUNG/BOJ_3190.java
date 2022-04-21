@@ -1,7 +1,9 @@
+package SAMSUNG;
+
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class BOJ_3190 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static StringTokenizer st = null;
 	static StringBuilder sb = new StringBuilder();
