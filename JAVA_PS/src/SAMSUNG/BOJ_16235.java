@@ -1,7 +1,9 @@
+package SAMSUNG;
+
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class BOJ_16235 {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	static StringTokenizer st = null;
 	static StringBuilder sb = new StringBuilder();
@@ -121,3 +123,4 @@ public class Main {
 		return Integer.parseInt(str);
 	}
 }
+
